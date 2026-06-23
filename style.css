@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-system: #f4f7f5;
+    --pastel-green-dark: #2d5a27;
+    --pastel-green-medium: #88b04b;
+    --pastel-green-light: #e8f0e6;
+    --pastel-green-accent: #d2e7d6;
+    --text-color: #2f3e46;
+    --white: #ffffff;
+    --danger: #d9534f;
+    --warning: #f0ad4e;
+}
+
+body {
+    background-color: var(--bg-system);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.max-container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--pastel-green-light);
+    border-bottom: 3px solid var(--pastel-green-accent);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--pastel-green-dark);
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: var(--pastel-green-light);
+    border-top: 1px solid var(--pastel-green-accent);
+    text-align: center;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.busca-container {
+    margin-bottom: 1rem;
+}
+
+#input-busca {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--pastel-green-accent);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#input-busca:focus {
+    border-color: var(--pastel-green-dark);
+}
+
+.tabs-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-button {
+    flex: 1;
+    background-color: var(--white);
+    border: 2px solid var(--pastel-green-accent);
+    padding: 1rem 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.tab-button.active {
+    background-color: var(--pastel-green-dark);
+    color: var(--white);
+    border-color: var(--pastel-green-dark);
+}
+
+.tab-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.badge {
+    background-color: var(--pastel-green-accent);
+    color: var(--pastel-green-dark);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.tab-button.active .badge {
+    background-color: var(--white);
+    color: var(--pastel-green-dark);
+}
+
+.chamados-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card {
+    background-color: var(--white);
+    border-left: 6px solid var(--pastel-green-medium);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card.atendimento { border-left-color: var(--warning); }
+.card.encerrado { border-left-color: #9cb3a8; }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.card-body p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.fornecedor-section {
+    background-color: var(--bg-system);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    border: 1px solid var(--pastel-green-accent);
+}
+
+.fornecedor-section h4 {
+    margin-bottom: 0.5rem;
+    color: var(--pastel-green-dark);
+}
+
+.warning-box {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+button {
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary { background-color: var(--pastel-green-dark); color: var(--white); padding: 0.6rem 1.2rem; }
+.btn-secondary { background-color: #e2e8f0; color: var(--text-color); padding: 0.6rem 1.2rem; }
+.btn-danger { background-color: var(--danger); color: var(--white); padding: 0.6rem 1.2rem; }
+.btn-small { padding: 0.4rem 0.8rem; font-size: 0.8rem; margin-top: 0.5rem; }
+.card-actions { display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: flex-end; }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.form-group.row {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modal-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--pastel-green-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.modal-header-top h2 {
+    font-size: 1.3rem;
+    color: var(--pastel-green-dark);
+}
+
+.btn-close-x {
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #a0aec0;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.btn-close-x:hover {
+    color: var(--danger);
+}
+
+input[type="text"], input[type="datetime-local"], input[type="date"], textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--pastel-green-accent);
+    border-radius: 4px;
+    background-color: var(--white);
+}
+
+input[readonly] { background-color: var(--bg-system); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1.5rem; }
+.modal-actions.centralizado { justify-content: center; }
+
+@media (min-width: 600px) {
+    .tab-button { flex-direction: row; justify-content: center; padding: 1rem; }
+    .tab-title { font-size: 1rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+}
