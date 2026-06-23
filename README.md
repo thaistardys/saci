@@ -4,6 +4,12 @@ O **SACI** é um sistema web responsivo e de alta fidelidade focado no controle,
 
 ---
 
+## 🚀 Demonstração
+
+▶️ **[Acesse a aplicação em execução aqui](https://thaistardys.github.io/saci/)**
+
+---
+
 ## 🚀 Funcionalidades Principais
 
 - **📦 Gestão Baseada em Estados**: Ciclo de vida completo do chamado através de 3 fases (*Em Aberto*, *Em Atendimento* e *Encerrado*).
