@@ -23,10 +23,12 @@ SACI/
 ├── index.html        # Estrutura semântica travada em max-width: 1024px.
 ├── style.css         # Estilização baseada em tons pastéis verdes e flexbox vertical.
 ├── db.js             # [PARTE 1] Camada isolada de persistência e mutação do LocalStorage.
-├── modais.js         # [PARTE 2] Engine de controle de abertura, fechamento e alertas personalizados.
-├── ui.js             # [PARTE 3] Renderizador dinâmico de cards, badges de contagem e datas locais (BR).
-├── main.js           # [PARTE 4] Orquestrador principal de regras de negócio e delegação de eventos do DOM.
-└── busca.js          # [PARTE 5] Algoritmo reativo de pesquisa indexada por caracteres.
+├── script.js (divido em 5 partes):
+   ├── modais         # [PARTE 2] Engine de controle de abertura, fechamento e alertas personalizados.
+   ├── ui             # [PARTE 3] Renderizador dinâmico de cards, badges de contagem e datas locais (BR).
+   ├── main           # [PARTE 4] Orquestrador principal de regras de negócio e delegação de eventos do DOM.
+   └── busca          # [PARTE 5] Algoritmo reativo de pesquisa indexada por caracteres.
+
 ```
 
 ---
